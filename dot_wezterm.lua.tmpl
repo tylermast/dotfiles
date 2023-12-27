@@ -1,0 +1,63 @@
+local wezterm = require 'wezterm'
+
+local config = {}
+
+if wezterm.config_builder then
+    config = wezterm.config_builder()
+end
+
+config.enable_scroll_bar = false
+config.window_padding = {
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
+}
+config.window_background_opacity = 1.0
+-- config.background = {
+--     {
+--         source = {
+--             File = 'C:\\Users\\tmast\\OneDrive\\Pictures\\Wallpapers\\dancer_bg.jpg',
+--         },
+--         -- width = 'Contain',
+--         height = 'Contain',
+--     },
+-- }
+
+{{ if eq .chezmoi.os "windows" }}
+config.default_prog = {'pwsh'}
+{{ else }}
+config.default_prog = {'zsh'}
+{{ end }}
+
+config.font = wezterm.font('RobotoMono Nerd Font')
+config.font_size = 20
+
+config.colors = {
+    foreground = '#bdbdbd',
+    background = '#080808',
+    cursor_fg  = '#080808',
+    cursor_bg  = '#9e9e9e',
+    ansi = {
+        '#323437',
+        '#ff5454',
+        '#8cc85f',
+        '#e3c78a',
+        '#80a0ff',
+        '#cf87e8',
+        '#79dac8',
+        '#c6c6c6',
+    },
+    brights = {
+        '#949494',
+        '#ff5189',
+        '#36c692',
+        '#c2c292',
+        '#74b2ff',
+        '#ae81ff',
+        '#85dc85',
+        '#e4e4e4',
+    },
+}
+
+return config
