@@ -11,6 +11,8 @@ alias tsfoff='sudo tailscale funnel 443 off'
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 export XDG_CONFIG_HOME=$HOME/.config
 
+setopt autocd
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -25,7 +27,7 @@ compinit
 # End of lines added by compinstall
 # Other custom configurations
 promptinit
-# prompt fade red
+# prompt fade blue
 PROMPT="%F{232}%K{blue}%B    %n@%m%b  %F{blue}%K{232}█▓▒░%F{white}%K{232}%B %D{%a %b %d} %D{%I:%M:%S%P}
 %}%F{blue}%K{232}%B%~/%b%k%f"
 
